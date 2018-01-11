@@ -1,0 +1,25 @@
+---
+applications:
+- name: irfanstore-ratelimit-route-service
+  memory: 1G
+  instances: 1
+  #random-route: false
+  timeout: 180
+  path: ./target/irfanstore-ratelimit-route-service-1.0-SNAPSHOT.jar
+  services:
+    - ostore-redis
+
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    RATE_LIMIT_EXPIRY: 1
+    RATE_LIMIT_ATTEMPT_ALLOWED: 5
+
+
+#Bind to the following services:
+# rediscloud (name: ostore-redis)
+
+# Create user provided routing service of this application.
+# cf cups ostore-ratelimit-routing-service -r https://irfanstore-ratelimit-route-service.cfapps.io
+
+# Bind route service
+# cf bind-route-service cfapps.io ostore-ratelimit-routing-service --hostname agency-anthracoid-orchidotomy
