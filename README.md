@@ -8,7 +8,6 @@ This is the sample rate limit routing service written to run in the Pivotal Clou
 Service binding is defined in the manifest.yml file. Create the following services inside the Cloud Foundry with the name provided as below:
 
 * `rediscloud` service name: `ostore-redis`
-* To create the service run the following command `cf cups ostore-ratelimit-routing-service -r https://irfanstore-ratelimit-route-service.cfapps.io`
 
 ### Environment Variables
 Set the following environment variables in the manifest.yml file:
@@ -20,5 +19,7 @@ After creating the services push the application using the `cf push` command.
 
 
 ### Bind the client application
-To bind the application route the call through the routing service run the following command: `cf bind-route-service cfapps.io ostore-ratelimit-routing-service --hostname myClientApplication`
+To bind the client application to route the call through the routing service do the following steps:
+* Create service instance. Run the following command `cf cups ostore-ratelimit-routing-service -r https://irfanstore-ratelimit-route-service.cfapps.io` 
+* Bind the service. Run the following command: `cf bind-route-service cfapps.io ostore-ratelimit-routing-service --hostname myClientApplication`
 
