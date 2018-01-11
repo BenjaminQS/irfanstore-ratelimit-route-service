@@ -2,7 +2,6 @@
 
 This is the sample rate limit routing service written to run in the Pivotal Cloud Foundry. This application uses Redis to store the rate limit information. It uses the client IP + URL as a key to store attempts.
 
-This application uses following features / services in the Pivotal Cloud Foundry:
 
 ## Running application inside Pivotal Cloud Foundry
 ### Service Binding
