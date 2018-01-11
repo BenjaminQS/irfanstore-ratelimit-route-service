@@ -1,6 +1,6 @@
 # irfanstore-ratelimit-route-service
 
-This is the sample rate limit routing service written to run in the Pivotal Cloud Foundry. This application uses Redis to store the rate limit information. It uses the client IP + URL as a key to store attempts.
+This is the sample rate limiting routing service written to run in the Pivotal Cloud Foundry. This application uses Redis to store the rate limit information. It uses the client IP + URL as a key to store attempts.
 
 
 ## Running application inside Pivotal Cloud Foundry
